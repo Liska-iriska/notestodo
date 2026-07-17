@@ -28,14 +28,14 @@ export default function NoteList({ onSelect, notes }: NoteListProps) {
         <li
           className={css.listItem}
           onClick={() => onSelect(note)}
-          key={note.id}
+          key={note._id}
         >
           <h2 className={css.title}>{note.title}</h2>
           <p className={css.content}>{note.content}</p>
           <p className={css.rate}>{note.rate}</p>
           <div className={css.footer}>
             <span className={css.tag}>{note.tag}</span>
-            <Link href={`/notes/${note.id}`} className={css.detailsLink}>
+            <Link href={`/notes/${note._id}`} className={css.detailsLink}>
               View details
             </Link>
             <button
@@ -43,7 +43,7 @@ export default function NoteList({ onSelect, notes }: NoteListProps) {
               disabled={mutation.isPending}
               onClick={(e) => {
                 e.stopPropagation();
-                mutation.mutate(note.id);
+                mutation.mutate(note._id);
               }}
             >
               Delete

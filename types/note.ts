@@ -1,7 +1,7 @@
 export type NoteTag = "Done" | "Undone";
 
 export interface Note {
-  id: string;
+  _id: string;
   title: string;
   content: string;
   tag: NoteTag;
