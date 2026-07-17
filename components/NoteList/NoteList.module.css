@@ -62,7 +62,7 @@
   display: inline-block;
   padding: 6px 12px;
   font-size: 14px;
-  color: var(--color-header);
+  color: var(--color-blue);
   background-color: var(--color-lightSkyBlue);
   border: 1px solid #000000;
   border-radius: 40px;
@@ -87,5 +87,5 @@
 }
 
 .link:hover {
-  background-color: var(--color-header);
+  background-color: var(--color-blue);
 }
