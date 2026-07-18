@@ -34,15 +34,20 @@ const roboto = Roboto({
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={roboto.variable}>
       <body>
         <TanStackProvider>
           <Header />
-          {children}
+          <main>
+            {children}
+            {modal}
+          </main>
           <Footer />
         </TanStackProvider>
       </body>
