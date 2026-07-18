@@ -76,9 +76,29 @@ export default function NoteForm() {
           onChange={handleChange}
           required
         >
-          <option value="Done">Todo</option>
-          <option value="Undone">Work</option>
+          <option value="Done">Done</option>
+          <option value="Undone">Undone</option>
         </select>
+      </div>
+
+      <div className={css.formGroup}>
+        <label>Rate (1-10)</label>
+        <div className={css.radioGroup}>
+          {[...Array(10)].map((_, index) => {
+            const value = index + 1;
+            return (
+              <label key={value} className={css.radioLabel}>
+                <input
+                  type="radio"
+                  name="rate"
+                  value={value}
+                  defaultChecked={draft?.rate === value}
+                />
+                <span className={css.radioCustom}>{value}</span>
+              </label>
+            );
+          })}
+        </div>
       </div>
 
       <div className={css.actions}>

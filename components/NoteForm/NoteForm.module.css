@@ -63,3 +63,36 @@
 .cancelButton:hover {
   background-color: #e2e6ea;
 }
+
+/* NoteList.module.css (або твій файл стилів форми) */
+.radioGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.radioLabel {
+  cursor: pointer;
+}
+
+.radioLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radioCustom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.radioLabel input:checked + .radioCustom {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
