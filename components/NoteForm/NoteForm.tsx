@@ -82,7 +82,7 @@ export default function NoteForm() {
       </div>
 
       <div className={css.formGroup}>
-        <label>Rate (1-10)</label>
+        <label>Importance (1-10)</label>
         <div className={css.radioGroup}>
           {[...Array(10)].map((_, index) => {
             const value = index + 1;

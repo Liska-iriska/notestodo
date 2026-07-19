@@ -10,9 +10,9 @@
 }
 
 .title {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 60px;
+  color: var(--color-title);
+  margin: 24px 0;
   text-align: center;
 }
