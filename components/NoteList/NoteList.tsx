@@ -32,10 +32,10 @@ export default function NoteList({ onSelect, notes }: NoteListProps) {
         >
           <h2 className={css.title}>{note.title}</h2>
           <p className={css.content}>{note.content}</p>
-          <p className={css.rate}>{note.rate}</p>
+          <p className={css.rate}>Importance: {note.rate}</p>
           <div className={css.footer}>
             <span className={css.tag}>{note.tag}</span>
-            <Link href={`/notes/${note._id}`} className={css.detailsLink}>
+            <Link href={`/notes/${note._id}`} className={css.link}>
               View details
             </Link>
             <button

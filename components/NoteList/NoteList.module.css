@@ -9,7 +9,7 @@
 
 .listItem {
   background-color: var(--color-white);
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -35,10 +35,20 @@
   overflow: hidden;
 }
 
+.rate {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 14px;
+  color: var(--color-content);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
 .button {
   align-self: flex-end;
   padding: 6px 12px;
   font-size: 14px;
+  font-family: inherit;
   color: var(--color-white);
   background-color: #dc3545;
   border: none;
@@ -64,7 +74,7 @@
   font-size: 14px;
   color: var(--color-blue);
   background-color: var(--color-lightSkyBlue);
-  border: 1px solid #000000;
+  border: 1px solid var(--color-border);
   border-radius: 40px;
   max-width: 100px;
   white-space: nowrap;
@@ -76,9 +86,9 @@
   align-self: flex-end;
   padding: 6px 12px;
   font-size: 14px;
-  color: var(--color-white);
+  color: var(--color-title);
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid var(--color-border);
   border-radius: 40px;
   cursor: pointer;
   text-decoration: none;
@@ -87,5 +97,5 @@
 }
 
 .link:hover {
-  background-color: var(--color-blue);
+  background-color: var(--color-clear-hover);
 }
