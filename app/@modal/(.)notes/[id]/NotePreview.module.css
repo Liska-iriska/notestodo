@@ -75,4 +75,5 @@
 
 .rate {
   color: var(--color-content);
+  font-size: 18px;
 }

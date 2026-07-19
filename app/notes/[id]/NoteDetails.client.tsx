@@ -30,7 +30,7 @@ const NoteDetailsClient = () => {
   return (
     <div className={css.container}>
       <div className={css.item}>
-        <button onClick={handleGoBack} className="backBtn">
+        <button onClick={handleGoBack} className={css.backBtn}>
           Back
         </button>
         <div className={css.header}>
@@ -38,7 +38,7 @@ const NoteDetailsClient = () => {
         </div>
         <p className={css.tag}>{note.tag}</p>
         <p className={css.content}>{note.content}</p>
-        <p className={css.tag}>{note.rate}</p>
+        <p className={css.rate}>Importance: {note.rate}</p>
         <p className={css.date}>
           {new Date(note.createdAt).toLocaleDateString()}
         </p>
