@@ -54,7 +54,7 @@
   border: none;
   border-radius: 40px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.6s ease;
 }
 
 .button:hover {
@@ -93,7 +93,7 @@
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.6s ease;
 }
 
 .link:hover {
