@@ -47,7 +47,10 @@ export default function NotesClient({ tag }: Props) {
       </div>
 
       {isLoading ? (
-        <p className={css.loader}>Loading...</p>
+        <p className={css.loader}>
+          Loading...⏳ First request may take up to 50 seconds while the server
+          wakes up.
+        </p>
       ) : (
         notes.length > 0 && <NoteList notes={notes} onSelect={() => {}} />
       )}
