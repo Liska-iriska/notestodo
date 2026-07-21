@@ -47,3 +47,9 @@
   text-align: center;
   align-items: center;
 }
+
+.hint {
+  font-size: 10px;
+  color: var(--color-content);
+  margin: 4px;
+}

@@ -56,3 +56,11 @@ export const fetchNoteById = async (id: string): Promise<Note> => {
   const { data } = await instance.get<Note>(`/notes/${id}`);
   return data;
 };
+
+export const updateNote = async (
+  id: string,
+  data: Partial<NewNoteData>,
+): Promise<Note> => {
+  const { data: note } = await instance.patch<Note>(`/notes/${id}`, data);
+  return note;
+};

@@ -1,7 +1,7 @@
 import css from "./NoteList.module.css";
-import type { Note } from "../../types/note";
+import type { Note, NoteTag } from "../../types/note";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deleteNote } from "../../lib/api";
+import { deleteNote, updateNote } from "../../lib/api";
 import Link from "next/link";
 
 interface NoteListProps {
@@ -14,6 +14,14 @@ export default function NoteList({ onSelect, notes }: NoteListProps) {
 
   const mutation = useMutation({
     mutationFn: deleteNote,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["notes"] });
+    },
+  });
+
+  const tagMutation = useMutation({
+    mutationFn: ({ id, tag }: { id: string; tag: NoteTag }) =>
+      updateNote(id, { tag }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["notes"] });
     },
@@ -34,7 +42,19 @@ export default function NoteList({ onSelect, notes }: NoteListProps) {
           <p className={css.content}>{note.content}</p>
           <p className={css.rate}>Importance: {note.rate}</p>
           <div className={css.footer}>
-            <span className={css.tag}>{note.tag}</span>
+            <span
+              className={css.tag}
+              onClick={(e) => {
+                e.stopPropagation();
+                tagMutation.mutate({
+                  id: note._id,
+                  tag: note.tag === "Done" ? "Undone" : ("Done" as NoteTag),
+                });
+              }}
+              style={{ cursor: "pointer" }}
+            >
+              {note.tag}
+            </span>
             <Link href={`/notes/${note._id}`} className={css.link}>
               View details
             </Link>

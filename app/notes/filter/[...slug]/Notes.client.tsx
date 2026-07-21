@@ -45,6 +45,10 @@ export default function NotesClient({ tag }: Props) {
       <div className={css.sortBy}>
         Sort by: <Sortation sortOrder={sortOrder} onSortChange={setSortOrder} />
       </div>
+      <p className={css.hint}>
+        Switch between &quot;Done&quot; and &quot;Undone&quot; instantly with a
+        single click!
+      </p>
 
       {isLoading ? (
         <p className={css.loader}>
