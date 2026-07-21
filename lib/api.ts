@@ -3,9 +3,9 @@ import type { Note, NoteTag } from "../types/note";
 
 const instance = axios.create({
   baseURL: "https://notestodo-db.onrender.com",
-  //   headers: {
-  //     Authorization: `Bearer ${process.env.NEXT_PUBLIC_NOTEHUB_TOKEN}`,
-  //   },
+  headers: {
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_NOTEHUB_TOKEN}`,
+  },
 });
 
 interface HTTPResponse {
