@@ -14,9 +14,7 @@
   cursor: pointer;
   min-width: 36px;
   height: 36px;
-  transition:
-    background-color 0.6s ease,
-    color 0.6s ease;
+  transition: background-color 0.6s ease;
 }
 
 .pagination li a {
