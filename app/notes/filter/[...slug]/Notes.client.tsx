@@ -8,6 +8,7 @@ import { fetchNotes } from "@/lib/api";
 import NoteList from "@/components/NoteList/NoteList";
 import Pagination from "@/components/Pagination/Pagination";
 import SearchBox from "@/components/SearchBox/SearchBox";
+import Sortation from "@/components/Sortation/Sortation";
 import css from "./Notes.module.css";
 
 interface Props {
@@ -17,6 +18,7 @@ interface Props {
 export default function NotesClient({ tag }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const debouncedSearch = useDebouncedCallback((value: string) => {
     setQuery(value);
@@ -24,8 +26,8 @@ export default function NotesClient({ tag }: Props) {
   }, 500);
 
   const { data, isLoading } = useQuery({
-    queryKey: ["notes", { page: currentPage, search: query, tag }],
-    queryFn: () => fetchNotes(query, currentPage, 12, tag),
+    queryKey: ["notes", { page: currentPage, search: query, tag, sortOrder }],
+    queryFn: () => fetchNotes(query, currentPage, 12, tag, "rate", sortOrder),
     placeholderData: keepPreviousData,
   });
 
@@ -40,9 +42,12 @@ export default function NotesClient({ tag }: Props) {
           Create note +
         </Link>
       </header>
+      <div className={css.sortBy}>
+        Sort by: <Sortation sortOrder={sortOrder} onSortChange={setSortOrder} />
+      </div>
 
       {isLoading ? (
-        <p>Loading...</p>
+        <p className={css.loader}>Loading...</p>
       ) : (
         notes.length > 0 && <NoteList notes={notes} onSelect={() => {}} />
       )}

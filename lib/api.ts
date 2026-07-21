@@ -25,6 +25,8 @@ export const fetchNotes = async (
   page: number = 1,
   perPage: number = 12,
   tag?: string,
+  sortBy?: string,
+  sortOrder?: string,
 ) => {
   const response = await instance.get<HTTPResponse>("/notes", {
     params: {
@@ -32,6 +34,8 @@ export const fetchNotes = async (
       page,
       perPage,
       tag,
+      sortBy,
+      sortOrder,
     },
   });
 

@@ -1,0 +1,38 @@
+.radioGroup {
+  display: flex;
+  gap: 10px;
+  margin-left: 4px;
+}
+
+.radioLabel {
+  cursor: pointer;
+}
+
+.radioLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radioCustom {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 24px;
+  border: 1px solid var(--color-input);
+  border-radius: 4px;
+  color: var(--color-content);
+  transition: background-color 0.6s ease;
+}
+
+.radioLabel input:checked + .radioCustom {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-color: var(--color-border);
+}
+
+.radioCustom:hover {
+  background-color: var(--color-lightSkyBlue);
+}

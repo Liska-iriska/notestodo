@@ -30,3 +30,18 @@
 .button:hover {
   background-color: #0b5ed7;
 }
+
+.loader {
+  padding: 24px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.sortBy {
+  display: flex;
+  font-family: inherit;
+  flex-direction: row;
+  margin-bottom: 12px;
+  text-align: center;
+  align-items: center;
+}
