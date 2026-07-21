@@ -3,7 +3,7 @@
 Modern web application for managing personal notes.
 
 ## 🚀 Live
-
+> ⚠️ **Note:** This application is currently optimized and styled for desktop screens only.
 https://notestodo-gold.vercel.app
 
 ## 🛠️ Tech Stack
