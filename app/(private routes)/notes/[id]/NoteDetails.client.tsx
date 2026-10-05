@@ -38,7 +38,6 @@ const NoteDetailsClient = () => {
         </div>
         <p className={css.tag}>{note.tag}</p>
         <p className={css.content}>{note.content}</p>
-        <p className={css.rate}>Importance: {note.rate}</p>
         <p className={css.date}>
           {new Date(note.createdAt).toLocaleDateString()}
         </p>

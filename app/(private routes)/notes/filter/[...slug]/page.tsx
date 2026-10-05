@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `NOTEStodo | ${tag}`,
       description: `Search by tag: ${tag}`,
-      url: `https://notestodo-gold.vercel.app/notes/filter/${tag}`,
+      url: `https://08-zustand-xi-sage.vercel.app/notes/filter/${tag}`,
       siteName: "NOTEStodo",
       images: [
         {
-          url: "https://notestodo-gold.vercel.app/notestodo_logo.png",
+          url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
           width: 1200,
           height: 630,
           alt: `${tag}`,

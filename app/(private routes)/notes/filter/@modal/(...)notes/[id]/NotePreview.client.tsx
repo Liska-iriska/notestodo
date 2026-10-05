@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { fetchNoteById } from "@/lib/api";
+import { fetchNoteById } from "@/lib/api/clientApi";
 import Modal from "@/components/Modal/Modal";
 import css from "./NotePreview.module.css";
 
@@ -35,7 +35,6 @@ export default function NotePreviewClient({ id }: Props) {
           </div>
           <p className={css.tag}>{note.tag}</p>
           <p className={css.content}>{note.content}</p>
-          <p className={css.rate}>Importance: {note.rate}</p>
           <p className={css.date}>
             {new Date(note.createdAt).toLocaleDateString()}
           </p>

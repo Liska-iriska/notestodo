@@ -7,7 +7,6 @@ const Footer = () => {
       <div className={css.content}>
         <p>© {new Date().getFullYear()} NOTEStodo. All rights reserved.</p>
         <div className={css.wrap}>
-          <p>Developer: User Name</p>
           <p>
             Contact us:&nbsp;
             <Link href="mailto:customer@notestodo.app">
