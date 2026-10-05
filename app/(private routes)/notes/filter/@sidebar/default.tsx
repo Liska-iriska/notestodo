@@ -1,7 +1,7 @@
 import Link from "next/link";
 import css from "./SidebarNotes.module.css";
 
-const TAGS = ["Todo", "Work", "Personal", "Meeting", "Shopping"];
+const TAGS = ["Done", "Undone"];
 
 export default function SidebarNotes() {
   return (
